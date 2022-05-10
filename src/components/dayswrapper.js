@@ -20,7 +20,7 @@ export default class DayWrapper extends Component {
 
 	handleSubmit() {
 		if (!this.state.reminderExists && this.state.textInput !== "") {
-			fetch("http://127.0.0.1:5000/reminder/add", {
+			fetch("https://nl-calendar-api.herokuapp.com/reminder/add", {
 				method: "POST",
 				headers: { "content-type": "application/json" },
 				body: JSON.stringify({
@@ -44,7 +44,7 @@ export default class DayWrapper extends Component {
 				);
 		} else if (this.state.reminderExists && this.state.textInput !== "") {
 			fetch(
-				`http://127.0.0.1:5000/reminder/update/${this.props.month.id}/${this.props.date}`,
+				`https://nl-calendar-api.herokuapp.com/reminder/update/${this.props.month.id}/${this.props.date}`,
 				{
 					method: "PUT",
 					headers: { "content-type": "application/json" },
@@ -64,7 +64,7 @@ export default class DayWrapper extends Component {
 				);
 		} else if (this.state.reminderExists && this.state.textInput === "") {
 			fetch(
-				`http://127.0.0.1:5000/reminder/delete/${this.props.month.id}/${this.props.date}`,
+				`https://nl-calendar-api.herokuapp.com/reminder/delete/${this.props.month.id}/${this.props.date}`,
 				{
 					method: "DELETE",
 				}
