@@ -1,0 +1,57 @@
+.day-title-wrapper {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	justify-content: flex-end;
+	gap: 10px;
+	text-align: center;
+	font-size: 1.25em;
+}
+
+.day {
+	display: flex;
+	flex-direction: column;
+	width: 12vw;
+	height: 12vh;
+	border-radius: 5px;
+	position: relative;
+
+	.date {
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		background-color: mediumseagreen;
+		color: navy;
+		width: 22px;
+		text-align: center;
+		opacity: 65%;
+		border-radius: 5px;
+	}
+
+	.reminderField {
+		background-color: rgb(4, 5, 44);
+		border-radius: 5px;
+		height: 100vh;
+		color: lightskyblue;
+		resize: none;
+
+		&:hover {
+			background-color: black;
+		}
+		&:focus {
+			background-color: black;
+		}
+	}
+}
+
+.day-overflow {
+	opacity: 70%;
+	color: black;
+
+	.date {
+		background-color: darkslategray;
+	}
+
+	.reminderField {
+		background-color: lightslategray;
+	}
+}
